@@ -1,76 +1,21 @@
 ---
+import Root from "./Root.astro";
 import Navbar from "../components/Navbar.astro";
+
+const { title } = Astro.props;
+const year = new Date().getFullYear();
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro Basics</title>
-    </head>
-    <body id="body">
-        <Navbar />
-        <main>
-            <slot />
-        </main>
-        <p id="copyright">Copyright © 2025 Ajibola Awotide.</p>
-    </body>
-</html>
+<Root title={title}>
+    <Navbar />
+    <main>
+        <slot />
+    </main>
+    <p id="copyright">Copyright © {year} Ajibola Awotide.</p>
+</Root>
 
 <style>
-    html,
-    body {
-        font-family: "Inter", sans-serif;
-        font-optical-sizing: auto;
-        background-color: #ebebeb;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     main {
         min-height: 50vh;
-    }
-
-    #body {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    #copyright {
-        font-size: 12px;
-    }
-
-    @media (min-width: 768px) {
-        #body {
-            width: 70%;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        #body {
-            width: 60%;
-        }
-    }
-
-    @media (min-width: 1280px) {
-        #body {
-            width: 55%;
-        }
-    }
-
-    @media (min-width: 1536px) {
-        #body {
-            width: 50%;
-        }
     }
 </style>

@@ -1,4 +1,4 @@
-# Hi, There
+# Hi There
 
 - I enjoy solving computer related problems.
 - I am proficient in Python and Javascript.

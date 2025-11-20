@@ -1,18 +1,15 @@
 ---
 import Github from "../assets/github.svg";
-import Linkedin from "../assets/linkedin.svg";
+import LinkedIn from "../assets/linkedin.svg";
 import EMail from "../assets/email.svg";
 ---
 
 <script>
-    document.querySelectorAll(".link").forEach((link) => {
+    document.querySelectorAll(".nav-link").forEach((link) => {
         if (link instanceof HTMLElement) {
-            if (link.dataset.path === window.location.pathname) {
+            if (link.dataset.path === window.location.pathname.replaceAll("/", "")) {
                 link.classList.add("active");
             }
-            const path = window.location.pathname;
-            console.log(path);
-            return path;
         }
     });
 </script>
@@ -25,7 +22,7 @@ import EMail from "../assets/email.svg";
                 <a href="https://github.com/builtbyjb" target="_blank"> <Github /></a>
             </li>
             <li>
-                <a href="https://linkedin.com/in/ajibolaawotide" target="_blank"> <Linkedin /> </a>
+                <a href="https://linkedin.com/in/ajibolaawotide" target="_blank"> <LinkedIn /> </a>
             </li>
             <li>
                 <a href="mailto:ajibolaawotide@gmail.com" target="_blank"> <EMail /> </a>
@@ -33,9 +30,15 @@ import EMail from "../assets/email.svg";
         </ul>
     </div>
     <ul id="nav-links">
-        <li class="link" data-path="/"><a class="nav-link" href="/">Home</a></li>
-        <li class="link" data-path="/blog"><a class="nav-link" href="/blog">Blog</a></li>
-        <li class="link"><a class="nav-link" href="/ajibola_awotide.pdf" target="_blank">Resume</a></li>
+        <li>
+            <a data-path="" class="nav-link" href="/">Home</a>
+        </li>
+        <li>
+            <a data-path="blog" class="nav-link" href="/blog">Blog</a>
+        </li>
+        <li>
+            <a data-path="resume" class="nav-link" href="/ajibola_awotide.pdf" target="_blank">Resume</a>
+        </li>
     </ul>
 </div>
 
@@ -56,7 +59,7 @@ import EMail from "../assets/email.svg";
     #social-links {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     #social-links li {
@@ -73,8 +76,17 @@ import EMail from "../assets/email.svg";
         margin: 0;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
         width: fit-content;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #nav-links:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    a:hover {
+        opacity: 1;
     }
 
     #nav-links li {
@@ -83,11 +95,13 @@ import EMail from "../assets/email.svg";
 
     .active {
         border-bottom: 2px solid #333;
+        opacity: 0.7;
     }
 
     a {
         text-decoration: none;
         color: #333;
+        opacity: 0.7;
     }
 
     @media (min-width: 500px) {
