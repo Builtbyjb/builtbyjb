@@ -7,8 +7,17 @@ import EMail from "../assets/email.svg";
 <script>
     document.querySelectorAll(".nav-link").forEach((link) => {
         if (link instanceof HTMLElement) {
-            if (link.dataset.path === window.location.pathname.replaceAll("/", "")) {
-                link.classList.add("active");
+            const pathname = window.location.pathname;
+            const dataPath = link.dataset.path;
+
+            if (dataPath) {
+                if (pathname === "/" && dataPath === "home") {
+                    link.classList.add("active");
+                }
+
+                if (dataPath !== "home" && pathname.includes(dataPath)) {
+                    link.classList.add("active");
+                }
             }
         }
     });
@@ -31,7 +40,7 @@ import EMail from "../assets/email.svg";
     </div>
     <ul id="nav-links">
         <li>
-            <a data-path="" class="nav-link" href="/">Home</a>
+            <a data-path="home" class="nav-link" href="/">Home</a>
         </li>
         <li>
             <a data-path="blog" class="nav-link" href="/blog">Blog</a>
@@ -54,6 +63,7 @@ import EMail from "../assets/email.svg";
 
     h1 {
         font-size: 1.5rem;
+        font-weight: 500;
     }
 
     #social-links {
@@ -67,8 +77,9 @@ import EMail from "../assets/email.svg";
     }
 
     #nav-links {
-        top: 0;
-        z-index: 1;
+        top: 10px;
+        left: 0;
+        z-index: 2;
         position: sticky;
         border-radius: 10px;
         border: 1px solid #ccc;
@@ -95,13 +106,14 @@ import EMail from "../assets/email.svg";
 
     .active {
         border-bottom: 2px solid #333;
-        opacity: 0.7;
+        opacity: 0.8;
     }
 
     a {
         text-decoration: none;
         color: #333;
-        opacity: 0.7;
+        margin-bottom: 0px;
+        opacity: 0.8;
     }
 
     @media (min-width: 500px) {

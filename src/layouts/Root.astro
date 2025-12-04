@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,15 +18,15 @@ const { title } = Astro.props;
             rel="stylesheet"
         />
         <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
         <title>{title}</title>
-        <!-- TODO: Add description -->
     </head>
     <body id="body">
         <slot />
     </body>
 </html>
 
-<style>
+<style is:global>
     html,
     body {
         font-family: "Work Sans", sans-serif;
@@ -37,32 +37,77 @@ const { title } = Astro.props;
         box-sizing: border-box;
     }
 
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3.66rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 1.38rem;
+    }
+
+    h2 {
+        font-size: 3.05rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 1.65rem;
+    }
+
+    h3 {
+        font-size: 2.44rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 1.56rem;
+    }
+
+    h4 {
+        font-size: 1.95rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    h5 {
+        font-size: 1.56rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
     #body {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
     }
 
     @media (min-width: 768px) {
         #body {
-            width: 70%;
+            width: 60%;
         }
     }
 
     @media (min-width: 1024px) {
         #body {
-            width: 60%;
+            width: 50%;
         }
     }
 
     @media (min-width: 1280px) {
         #body {
-            width: 55%;
+            width: 45%;
         }
     }
 
-    @media (min-width: 1536px) {
+    @media (min-width: 1440px) {
         #body {
-            width: 50%;
+            width: 40%;
         }
     }
 </style>
