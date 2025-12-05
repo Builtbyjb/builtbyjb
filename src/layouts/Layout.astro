@@ -1,17 +1,19 @@
 ---
 import Root from "./Root.astro";
 import Navbar from "../components/Navbar.astro";
+import PostHog from "../components/Posthog.astro";
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
-<Root title={title}>
+<Root title={title} description={description}>
+    <PostHog />
     <Navbar />
     <main>
         <slot />
     </main>
-    <p id="copyright">Copyright © {year} Ajibola Awotide.</p>
+    <p id="copyright">Copyright © {year} Ajibola Awotide. All rights reserved.</p>
 </Root>
 
 <style>
@@ -20,6 +22,7 @@ const year = new Date().getFullYear();
     }
 
     p {
-        font-size: 11px;
+        margin-top: 50px;
+        font-size: 13px;
     }
 </style>

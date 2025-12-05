@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+    <div id="header">
+        <h3 id="title">{frontmatter.title}</h3>
+        <p id="desc">{frontmatter.description}</p>
+        <p id="date">{frontmatter.date}</p>
+    </div>
+    <article id="markdown">
+        <slot />
+    </article>
+</Layout>
+
+<style>
+    #markdown :global(a) {
+        color: #333;
+        text-decoration: underline;
+    }
+
+    #markdown :global(ul) {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    #markdown :global(strong) {
+        font-weight: 500;
+    }
+
+    #markdown :global(pre) {
+        padding: 16px 24px;
+        border-radius: 10px;
+    }
+
+    #markdown :global(blockquote) {
+        font-style: italic;
+    }
+
+    #date {
+        color: #333;
+        opacity: 0.8;
+    }
+
+    #header {
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+</style>

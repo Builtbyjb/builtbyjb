@@ -4,16 +4,21 @@ import Layout from "../../layouts/Layout.astro";
 const posts = Object.values(import.meta.glob("./*.md", { eager: true }));
 ---
 
-<Layout>
+<Layout title="Blog" description="My blog posts">
     <div>
-        <h1>Blog</h1>
+        <h3 id="header">Blog</h3>
         <ul>
             {
                 posts.map(
                     (post: any) =>
                         !post.frontmatter.draft && (
                             <li>
-                                <a href={post.url}>{post.frontmatter.title}</a>
+                                <a href={post.url}>
+                                    <div class="post-link">
+                                        <h6>{post.frontmatter.title}</h6>
+                                        <p>{post.frontmatter.date}</p>
+                                    </div>
+                                </a>
                             </li>
                         ),
                 )
@@ -21,3 +26,34 @@ const posts = Object.values(import.meta.glob("./*.md", { eager: true }));
         </ul>
     </div>
 </Layout>
+
+<style>
+    #header {
+        margin-bottom: 30px;
+    }
+
+    ul {
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    p {
+        margin-top: 0;
+        opacity: 0.8;
+    }
+
+    .post-link {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 6px 16px;
+    }
+</style>
