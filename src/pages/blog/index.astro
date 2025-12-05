@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 const posts = Object.values(import.meta.glob("./*.md", { eager: true }));
 ---
 
-<Layout>
+<Layout title="Blog" description="My blog posts">
     <div>
         <h3 id="header">Blog</h3>
         <ul>
