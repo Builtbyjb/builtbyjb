@@ -1,10 +1,18 @@
 ---
-import Welcome from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
+
+const title = "Ajibola Awotide";
+const description = "A blog about parallel computing, distributed systems, data science and AI.";
 ---
 
-<Layout>
-    <div>
-        <p>I am software developer</p>
-    </div>
+<Layout title={title} description={description}>
+    <p>Hi there, I am a software developer passionate about tackling problems that require massive efficiency.</p>
+    <p>
+        This blog is where I explore the challenging and fascinating intersection of parallel computing, distributed
+        systems, data science and AI.
+    </p>
+    <p>
+        Professionally, I work with Java specifically the Spring Boot framework and JavaScript with the React framework.
+        Personally,I primarily build using Python, JavaScript/TypeScript and Rust.
+    </p>
 </Layout>

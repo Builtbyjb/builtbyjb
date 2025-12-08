@@ -1,0 +1,117 @@
+---
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="generator" content={Astro.generator} />
+        <meta name="description" content={description} />
+        <title>{title}</title>
+    </head>
+    <body id="body">
+        <slot />
+    </body>
+</html>
+
+<style is:global>
+    html,
+    body {
+        font-family: "Work Sans", sans-serif;
+        font-optical-sizing: auto;
+        background-color: #ebebeb;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    h1 {
+        font-size: 3.66rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 3.66rem;
+    }
+
+    h2 {
+        font-size: 3.05rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 3.36rem;
+    }
+
+    h3 {
+        font-size: 2.44rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 2.93rem;
+    }
+
+    h4 {
+        font-size: 1.95rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 2.54rem;
+    }
+
+    h5 {
+        font-size: 1.56rem;
+        font-weight: 500;
+        margin-bottom: 6px;
+        line-height: 2.34rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        line-height: 1.88rem;
+    }
+
+    #body {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 768px) {
+        #body {
+            width: 60%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #body {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        #body {
+            width: 45%;
+        }
+    }
+
+    @media (min-width: 1440px) {
+        #body {
+            width: 40%;
+        }
+    }
+</style>

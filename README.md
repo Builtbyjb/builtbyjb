@@ -1,5 +1,4 @@
-# Hi, There
+# Hi 👋
 
-- I enjoy solving computer related problems.
-- I am proficient in Python and Javascript.
-- Currently looking into lower level languages like Rust, Zig, and Assembly
+- I enjoy building software.
+- I primarily build with Python, JavaScript/TypeScript, Rust.
