@@ -1,4 +1,4 @@
 # Hi 👋
 
-- I enjoy building software.
+- I build digital tools ⚒️.
 - I primarily build with Python, JavaScript/TypeScript, Rust.
