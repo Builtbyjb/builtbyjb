@@ -16,6 +16,7 @@ const posts = Object.values(import.meta.glob("./*.md", { eager: true }));
                                 <a href={post.url}>
                                     <div class="post-link">
                                         <h6>{post.frontmatter.title}</h6>
+                                        <p>{post.frontmatter.description}</p>
                                         <p>{post.frontmatter.date}</p>
                                     </div>
                                 </a>
@@ -29,7 +30,12 @@ const posts = Object.values(import.meta.glob("./*.md", { eager: true }));
 
 <style>
     #header {
-        margin-bottom: 30px;
+        margin-bottom: 1.5rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     ul {
@@ -44,6 +50,10 @@ const posts = Object.values(import.meta.glob("./*.md", { eager: true }));
     a {
         text-decoration: none;
         color: #333;
+    }
+
+    h6 {
+        margin-bottom: 0;
     }
 
     p {

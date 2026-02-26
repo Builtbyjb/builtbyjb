@@ -1,4 +1,3 @@
-# Hi 👋, I am Ajibola Awotide.
+# Hi 👋
 
-- I enjoy building software.
-- I primarily build with Python, JavaScript/TypeScript, Rust.
+- I build digital tools.
