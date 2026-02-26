@@ -1,3 +1,3 @@
 # Hi 👋
 
-- I build digital tools.
+- I build digital tools ⚒️.
